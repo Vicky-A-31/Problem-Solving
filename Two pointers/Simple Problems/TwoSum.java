@@ -36,16 +36,15 @@ public class TwoSum {
         System.out.println("Input Array : " + Arrays.toString(array) + "Target: " + target);
 
         HashSet<Integer> set = new HashSet<>();
-        for(int i : array) {
-            set.add(i);
-        }
 
-        for(int i: array) {
+        for (int i : array) {
             int x = target - i;
-            if(set.contains(x) && x != i) {
+            // to avoid the case of (1, 1) when target is 2 and array contains only one 1
+            if (set.contains(x)) {
                 System.out.println("Pair found: (" + i + ", " + x + ")");
                 break;
             }
+            set.add(i);
         }
     }
 }

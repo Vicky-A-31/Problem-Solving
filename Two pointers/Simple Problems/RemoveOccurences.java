@@ -19,29 +19,28 @@ This approach take another array But in this question don't use extra memory,
  time complexity : O(n) space complexity: O(n)
 */
 
-
 // this approach uses two pointers, time complexity: O(n) space complexity: O(1)
 
 import java.util.Arrays;
 
-class RemoveOccurences { 
+class RemoveOccurences {
     public static void main(String[] args) {
-        int[] array = {0, 1, 2, 3, 2, 1, 5};
+        int[] array = { 0, 1, 2, 3, 4, 2, 1, 5 };
         int element = 2;
 
         int count = 0;
-        for(int i=0; i<array.length; i++) {
-            if(array[i] != element) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] != element) {
                 array[count] = array[i];
                 count++;
             }
         }
 
-        for(int i=count; i<array.length; i++) {
+        for (int i = count; i < array.length; i++) {
             array[i] = -1;
         }
 
         System.out.println("Count : " + count);
         System.out.println("Modified Array : " + Arrays.toString(array));
     }
-}    
+}
