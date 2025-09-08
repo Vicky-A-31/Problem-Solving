@@ -19,8 +19,8 @@ public class PrintAllDivisors {
 
         for (int i = 1; i <= Math.sqrt(n); i++) {
             if (n % i == 0) {
-                result.add(i);
-                result.add(n / i);
+                result.add(i); // divisor
+                result.add(n / i); // quotient 28/2 = 14, (2, 14) divisors of 28 
             }
         }
 
